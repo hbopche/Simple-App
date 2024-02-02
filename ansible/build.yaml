@@ -1,0 +1,8 @@
+---
+- hosts: jenkins
+  user : jenkins
+  become: true
+  gather_facts: false
+  tasks:
+    - name: Running mvn clean
+      shell: "mvn clean install"
