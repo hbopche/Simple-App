@@ -5,4 +5,4 @@
   gather_facts: false
   tasks:
     - name: Build Maven
-      command: mvn -f /var/lib/jenkins/workspace/Project-1/pom.xml clean package
+      command: mvn clean install
