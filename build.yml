@@ -3,5 +3,5 @@
   become_user: root
   gather_facts: false
   tasks:
-    - include_role:
-        name: maven
+    - name: Build Maven
+      command: mvn -f /var/lib/jenkins/workspace/Project-1/pom.xml clean package
