@@ -1,6 +1,4 @@
 ---
-- name: Package Maven
-  shell: "mvn package"
 - name: Build Maven
-  shell: "mvn clean install"
+  command: mvn -f /var/lib/jenkins/workspace/Project-1/pom.xml clean package
 
