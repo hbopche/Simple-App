@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 
-<!-- {{ ansible_managed }} -->
+<!-- Ansible managed -->
 
 <!--
   Licensed to the Apache Software Foundation (ASF) under one or more
@@ -70,7 +70,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL HTTP/1.1 Connector on port 8080
     -->
-    <Connector port="{{ http_port }}" protocol="HTTP/1.1"
+    <Connector port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
                redirectPort="8443" />
     <!-- A "Connector" using the shared thread pool-->
@@ -85,7 +85,7 @@
          connector should be using the OpenSSL style configuration
          described in the APR documentation -->
     <!--
-    <Connector port="{{ https_port }}" protocol="HTTP/1.1" SSLEnabled="true"
+    <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
                maxThreads="150" scheme="https" secure="true"
                clientAuth="false" sslProtocol="TLS" />
     -->
