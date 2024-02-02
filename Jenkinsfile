@@ -20,8 +20,10 @@ pipeline {
         
          stage('Build') {
            steps {
-              sh "ansible-playbook build.yml"
-          }
+               script {
+              ansiblePlaybook become: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: '/var/lib/jenkins/workspace/Project-1/ansible/build.yml', vaultTmpPath: ''
         }
 }   
+}
+    }
 }
