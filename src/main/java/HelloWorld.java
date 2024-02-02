@@ -1,29 +1,19 @@
-package com.springhow.example.helloworld;
+package io.happycoding.servlets;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import java.io.IOException;
 
-@RestController
-@SpringBootApplication
-public class HelloWorldApplication extends SpringBootServletInitializer {
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(HelloWorldApplication.class);
-    }
+@WebServlet("/hello")
+public class HelloWorldServlet extends HttpServlet {
 
-    public static void main(String[] args) {
-        SpringApplication.run(HelloWorldApplication.class);
-    }
-
-
-    @RequestMapping("/")
-    String helloWorld() {
-        return "Hello World!";
-    }
-
+  @Override
+  public void doGet(HttpServletRequest request, HttpServletResponse response)
+      throws IOException {
+    response.setContentType("text/html;");
+    response.getWriter().println("<h1>Hello world!</h1>");
+  }
 }
