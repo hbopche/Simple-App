@@ -19,7 +19,7 @@ pipeline {
         
          stage('Build') {
            steps {
-              sh "build.yml"
+              sh "/ansible/build.yml"
           }
         }
 }   
