@@ -5,8 +5,8 @@
   gather_facts: false
   tasks:
     - name: Download Apache Maven
-      get_url: url=http://apache.claz.org/maven/maven-3/3.1.1/binaries/apache-maven--bin.tar.gz dest=/tmp/apache-maven--bin.tar.gz
+      get_url: url=https://mirrors.estointernet.in/apache/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz dest=/tmp/apache-maven-3.8.5-bin.tar.gz
     - name: Untar Maven
-      shell: chdir=/tmp creates=/opt/apache-maven- tar -zxf apache-maven--bin.tar.gz -C /opt
+      shell: chdir=/tmp creates=/opt/apache-maven- tar -zxf apache-maven-3.8.5-bin.tar.gz -C /opt
     - name: Build Maven
       shell: "mvn clean install"
