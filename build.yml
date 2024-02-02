@@ -4,5 +4,9 @@
   become_user: root
   gather_facts: false
   tasks:
+    - name: Download Apache Maven
+      get_url: url=http://apache.claz.org/maven/maven-3/3.1.1/binaries/apache-maven--bin.tar.gz dest=/tmp/apache-maven--bin.tar.gz
+    - name: Untar Maven
+      shell: chdir=/tmp creates=/opt/apache-maven- tar -zxf apache-maven--bin.tar.gz -C /opt
     - name: Build Maven
       shell: "mvn clean install"
