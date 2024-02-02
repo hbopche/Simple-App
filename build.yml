@@ -8,5 +8,17 @@
       get_url: url=https://mirrors.estointernet.in/apache/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz dest=/tmp/apache-maven-3.8.5-bin.tar.gz
     - name: Untar Maven
       shell: chdir=/tmp creates=/opt/apache-maven- tar -zxf apache-maven-3.8.5-bin.tar.gz -C /opt
+    - name: Set MAVEN_HOME
+      become: true
+      lineinfile:
+      dest: /etc/profile.d/maven.sh
+      create: yes
+      state: present
+      mode: '0744'
+      line: '{{ item }}'
+      with_items:
+      - 'export M2_HOME=/opt/apache-maven-3.8.5'
+      - 'export MAVEN_HOME=/opt/apache-maven-3.8.5'
+      - 'export PATH=${M2_HOME}/bin:${PATH}'
     - name: Build Maven
       shell: "mvn clean install"
