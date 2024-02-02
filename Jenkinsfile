@@ -19,9 +19,8 @@ pipeline {
         
          stage('Build') {
            steps {
-               script {
-              ansiblePlaybook become: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: '/var/lib/jenkins/workspace/Project-1/ansible/build.yml', vaultTmpPath: ''
-        }
+            sh 'mvn package'
+            sh 'mvn clean install'   
 }   
 }
     }
