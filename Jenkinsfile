@@ -4,7 +4,6 @@ pipeline {
     tools
     {
        maven "Maven"
-       ansible "ansible" 
     }
      
     stages {
@@ -20,7 +19,7 @@ pipeline {
         
          stage('Build') {
            steps {
-              sh "ansible-playbook /ansible/build.yml"
+              sh "ansible-playbook build.yml"
           }
         }
 }   
