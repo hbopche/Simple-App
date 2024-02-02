@@ -9,8 +9,8 @@ pipeline {
     stages {
       stage('checkout') {
            steps {
-             
-                git branch: 'main', url: 'https://github.com/hbopche/Simple-App.git'
+             script {
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/hbopche/Simple-App.git']])
              
           }
         }
@@ -24,4 +24,4 @@ pipeline {
                 sh 'mvn clean install'
           }
         }
-}    
+}    }
