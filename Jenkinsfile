@@ -23,5 +23,12 @@ pipeline {
             sh 'mvn clean install'   
 }   
 }
+        stage('Ansible Deploy') {
+             steps {
+                 script {
+                     ansiblePlaybook become: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: '/var/lib/jenkins/workspace/Project-1/ansible/main.yml', vaultTmpPath: ''
+    }
+}
+        }
     }
 }
