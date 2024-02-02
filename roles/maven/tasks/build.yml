@@ -1,4 +1,6 @@
 ---
+- name: Package Maven
+  shell: "mvn package"
 - name: Build Maven
   shell: "mvn clean install"
 
