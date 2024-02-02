@@ -27,7 +27,7 @@ pipeline {
         stage('Ansible Deploy') {
              steps {
                  script {
-                     ansiblePlaybook become: true, installation: 'ansible', inventory: '/var/lib/jenkins/workspace/Project-1/inventories/tomcat/hosts', playbook: '/var/lib/jenkins/workspace/Project-1/main.yml', vaultTmpPath: '' vaultTmpPath: ''
+                     ansiblePlaybook become: true, installation: 'ansible', inventory: '/var/lib/jenkins/workspace/Project-1/inventories/tomcat/hosts', playbook: '/var/lib/jenkins/workspace/Project-1/main.yml', vaultTmpPath: ''
     }
 }
         }
