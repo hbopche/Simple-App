@@ -1,0 +1,4 @@
+---
+- name: Build Maven
+  shell: "mvn clean install"
+
