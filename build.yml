@@ -5,4 +5,4 @@
   gather_facts: false
   tasks:
     - name: Build Maven
-      command: mvn clean install
+      shell: "mvn clean install"
